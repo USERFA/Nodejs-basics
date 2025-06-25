@@ -1,0 +1,3 @@
+Event loop is what allows Node.js to perform non-blocking I/O operations despite the fact
+that it's single-threaded (offloading operations yo kernel)
+we run ou immediate tasks first and then we run the callbacks (offload time consuming operations)
