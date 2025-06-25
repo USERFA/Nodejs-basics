@@ -190,3 +190,31 @@
 //     res.end("welcome");
 // })
 // server.listen(5000);
+
+
+////////Streams///
+// read file
+// const {createReadStream} = require('fs');
+
+// const stream = createReadStream("./content/big.txt",{highWaterMark:90000,encoding:'utf8'});
+
+// //reads file in chunks
+// stream.on("data",(result)=>{
+//     console.log(result);
+// })
+
+var http = require("http");
+var fs = require("fs");
+var server = http.createServer((req, res) => {
+    const fileStream = fs.createReadStream("./content/big.txt", "utf8");
+    fileStream.on("open", () => {
+        fileStream.pipe(res);//pushes from the read stream in the right stream (read and write data in chunks)
+    })
+    fileStream.on("error", (err) => {
+        res.end(err)
+    })
+    //bad since sending a very large amount of data to the server is not goo
+    // const text = fs.readFileSync("./content/big.txt","utf8");
+    // res.end(text)
+})
+server.listen(5000)
