@@ -102,7 +102,64 @@
 
 
 
-const _ = require('lodash');
-const items = [1,[2,[3,[4]]]]
-const newItems = _.flattenDeep(items);
-console.log(newItems);
+// const _ = require('lodash');
+// const items = [1,[2,[3,[4]]]]
+// const newItems = _.flattenDeep(items);
+// console.log(newItems);
+
+
+
+// //blocking code
+// const http = require("http");
+// const server = http.createServer((req, res) => {
+//     if (req.url === "/") {
+//         res.end("Home page")
+//     }
+//     if (req.url === "/about") {
+//         //blocking code (nested for loop) //once the loop finishes then the page is rendered
+//         for (let i = 0; i < 100; i++) {
+//             for (let j = 0; j < 100; j++) {
+//                 console.log(i, j);
+
+//             }
+//         }
+//         res.end("About page")
+//     }
+//     res.end("Error page")
+
+// });
+// server.listen("5000", () => {
+//     console.log("server is listenning on port 5000");
+// });
+
+///////readfile async
+// // promise will be use to execute multiple useActionState, ex, reading 2 files and writing...
+// const fs = require("fs");
+
+// const getText = (path) => {
+//     return new Promise((resolve, reject) => {
+//         fs.readFile(path, "utf-8", (err, content) => {
+//             if (err) {
+//                 reject(err)
+//                 // return;
+//             } else {
+//                 resolve(content)
+//                 // console.log(content);
+//             }
+//         });
+
+//     })
+// }
+
+// // getText("./content/first").then((result)=>{console.log(result)}).catch((err)=>console.log(err))
+// // getText("./content/second").then((result)=>{console.log(result)}).catch((err)=>console.log(err))
+
+// const start = async () => {
+//     try {
+//         const first = await getText('./content/first') //once the promise is resolved we'll get our reposnse
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// start();
