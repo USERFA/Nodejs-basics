@@ -5,3 +5,9 @@ we run ou immediate tasks first and then we run the callbacks (offload time cons
 
 
 # Streams:  streams are used to read or write sequentially (extends eventEmitter class)
+
+data is exchanged in the web =  http request, http response to the server
+express js 
+message = headers+body
+request message = what the user is sending
+response message = what the server is sending
