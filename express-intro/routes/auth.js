@@ -5,7 +5,7 @@ const router = express.Router();
 
 // let { people } = require("../data");
 
-const {getPeople, createPerson, updatePerson, deletePerson} = require("./controllers/people")
+const {getPeople, createPerson, updatePerson, deletePerson} = require("../controllers/people")
 
 //WAY 1 (with controller use)
 //read data
